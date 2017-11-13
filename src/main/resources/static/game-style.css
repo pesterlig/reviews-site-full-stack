@@ -1,100 +1,57 @@
-/*reviews page/landing page*/ 
-.landing-page {
-
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr;
-	grid-template-rows: 500px auto 50px;
-	height: calc(100vh - 20px);
-	margin: 10px;	
+body {
+   background-color: #B5BAB2;  /*pale grey*/
+  color: #5C03AA;  /*royal-blue-purple*/
 }
 
-.landing-page.header {
-	grid-column: 1 / -1;
-	background-image: .heroImage;
+h1, p {
+   color:#111403;  /*dark-olive-green*/
 }
 
-img .heroImage {
-	min-width: 95%;
-	min-height: auto:;
-}
+@media screen and (min-width: 500px) {
 
-.landingpage .footer {
-	grid-column: 1 / -1;
-}
+  /* no grid support? */
+  .sidebar {
+    background-color: #871C8E  /*darkish-lavender*/
+    color: #C5C7BB;  /*light-green-gray*/
+  }
 
-.landing-page body {
-	background-color: orange;
-}
+  .content {
+    float: right;
+    width: 79.7872%;
+  }
 
-.landing-page header {
-	background-color: yellow;
-
-}
-
-.landing-page footer {
-	background-color: hotpink;
-}
-
-
-
-.container {
-	background-color: black;
-}
-
-.container header {
-	background-color: green;
-
-}
-
-.container footer {
-	background-color: purple;
-}
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-.landing-page {
-
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr;
-	grid-template-rows: 200px auto 50px;
-	height: calc(100vh - 20px);
-	margin: 10px;	
-}
-/*.landing-page img .heroImage {
-	width: auto;
-	height: 200;
-}*/
-
-.container {
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr;
-	grid-template-rows: 100px auto 30px;
-	height: calc(100vh - 20px);
-	margin: 10px;		
-
-}
-
-
-
-/*html body {
-    margin:0;
-    height:100%;
-    overflow:hidden;*/
-}
-
-/*img.heroImage {
-    min-height:100%;
-    min-width:100%;
+  .content.gamepic {
+    width: 79.7872%
+    max-width:900px;
     height:auto;
-    width:auto;
-    position:absolute;
-    top:-100%; bottom:-100%;
-    left:-100%; right:-100%;
-    margin:auto;*/
+  }
+
+  
+}
+
+.wrapper > * {
+  background-color: #5C03AA;
+  color: #B5BAB2;
+  }
+
+  .header, .footer {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+
+.wrapper > * {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
 }
