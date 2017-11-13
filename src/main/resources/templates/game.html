@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Game</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css"/>
+	<link rel="stylesheet" type="text/css" href="layout.css"/>
+	<link rel="stylesheet" type="text/css" href="game-style.css"/>
+</head>
+
+
+<div class="wrapper">
+  <header class="header">My header</header>
+  <aside class="sidebar">Sidebar</aside>
+  <article class="content">
+    <h1>2 column, header and footer</h1>
+    <p>This example uses line-based positioning, to position the header and footer, stretching them across the grid.</p>
+  </article>
+  <footer class="footer">My footer</footer>
+</div>
+
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h2 th:text="${game.title}">(Game Title)</h2>
+		</header>
+		
+			<aside class="sidebar">
+				<p>
+					<span> Time required to play: </span>
+					<span th:text="${game.minutesToPlay}"> (minutes) </span>
+				</p>
+			
+			<p> 
+			<span> Challenge level: </span>
+			<span th:text="${game.challengeLevel}"> (level) </span>
+			</p>
+		</aside>
+		
+		<article class="content">
+			<h3>Review</h3>
+			<p th:text="${game.review}"> (This game is shite) </p>
+		</article>
+		
+	</div> 
+	
+	<footer class="footer">	
+		<a th:href="@{http://localhost:8080/playerNum(id=${game.playerNum.id})}">Back</a>
+	</footer>
+			
+	  
+			
+</body>
+</html>
